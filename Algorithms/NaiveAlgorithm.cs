@@ -7,24 +7,18 @@
             var count = 0;
             var res = new List<Tuple<int, int>>();
 
-            if (mainStr.Length < subStr.Length)
+            for (var i = 0; i < mainStr.Length - subStr.Length + 1; i++)
             {
-                throw new ArgumentException("Длина основной строки должна быть больше длины подстроки!");
-            }
-
-            for (var i = 0; i + subStr.Length - 1 < mainStr.Length; i++)
-            {
-                bool isCompleteCoincidence = true;
-                for (var j = 0; j < subStr.Length; j++)
+                var j = 0;
+                for (; j < subStr.Length; j++)
                 {
-                    isCompleteCoincidence = mainStr[i + j] == subStr[j];
                     count++;
-                    if (!isCompleteCoincidence)
+                    if (!(mainStr[i + j] == subStr[j]))
                     {
                         break;
                     }
                 }
-                if (isCompleteCoincidence)
+                if (j == subStr.Length)
                 {
                     res.Add(Tuple.Create(i, count));
                 }

@@ -9,7 +9,8 @@ do
 
     try
     {
-        var res = Algorithms.NaiveAlgorithm.Execution(mainStr, subStr);
+        //var res = Algorithms.NaiveAlgorithm.Execution(mainStr, subStr);
+        var res = Algorithms.KMP.Execution(mainStr, subStr);
 
         var firstLine = new List<string>();
         var secondLine = new List<string>();
