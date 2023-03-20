@@ -60,7 +60,11 @@ namespace Algorithms
                 if (j == 0)
                     i++;
                 else
-                    j = matrix.Bll[j] == 0 ? matrix.Bl[j] - 1 : matrix.Bll[j] - 1;
+                {
+                    j = matrix.Bll[j];
+                    if (j == 0)
+                        i++;
+                }
             }
 
             res.Add(Tuple.Create(-1, count));
