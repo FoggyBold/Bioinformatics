@@ -10,7 +10,7 @@ do
     try
     {
         //var res = Algorithms.NaiveAlgorithm.Execution(mainStr, subStr);
-        var res = Algorithms.KMP.Execution(mainStr, subStr);
+        var res = Algorithms.DBG.Execution(mainStr, subStr, Algorithms.Helper.GetAlphabet(mainStr));
 
         var firstLine = new List<string>();
         var secondLine = new List<string>();
@@ -27,7 +27,7 @@ do
 
         foreach (var item in res)
         {
-            Console.WriteLine($"Индекс вхождения: {item.Item1}, Кол-во сравнений: {item.Item2}");
+            Console.WriteLine($"Индекс вхождения: {item}"/*, Кол-во сравнений: {item.Item2}"*/);
         }
     }
     catch (Exception ex)
@@ -37,3 +37,4 @@ do
 
     Console.WriteLine("Завершить работу? (Esc)");
 } while (Console.ReadKey().KeyChar != (char)ConsoleKey.Escape);
+
